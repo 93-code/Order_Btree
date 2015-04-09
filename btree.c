@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "head.h"
 
-btree_t *Malloc_Bnode(DATATYPE data)
+btree_t *Malloc_Bnode(char data)
 {
     btree_t *tree;
     tree = (btree_t *)malloc(sizeof(btree_t));
@@ -64,3 +64,30 @@ int PostOrder_Tree(btree_t *root)
 
     return 1;
 }
+
+#if 1
+int Level_Tree(btree_t *root)
+{
+    DATATYPE tmp;
+    LinkQueue *Tree_Lq = create_linkqueue();
+
+    enter_linkqueue(Tree_Lq,root);
+
+    while (!is_empty_linkqueue(Tree_Lq))
+    {
+        tmp = delete_linkqueue(Tree_Lq);
+        printf("%c ",tmp->data);
+
+        if (tmp->lchild != NULL)
+        {
+            enter_linkqueue(Tree_Lq,tmp->lchild);
+        }
+
+        if (tmp->rchild != NULL)
+        {
+            enter_linkqueue(Tree_Lq,tmp->rchild);
+        }
+    }
+    return 0;
+}
+#endif 

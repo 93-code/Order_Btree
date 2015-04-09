@@ -17,5 +17,9 @@ int main()
 
     PostOrder_Tree(btree);
     printf("\n");
+
+    Level_Tree(btree);
+    printf("\n");
+    
     return 0;
 }
