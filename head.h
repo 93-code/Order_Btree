@@ -38,6 +38,6 @@ extern btree_t *Create_BinaryTree(char buf[],int num);
 extern int PreOrder_Tree(btree_t *root);
 extern int InOrder_Tree(btree_t *root);
 extern int PostOrder_Tree(btree_t *root);
-//extern int Level_Tree(btree_t *root);
+extern int Level_Tree(btree_t *root);
 
 #endif
